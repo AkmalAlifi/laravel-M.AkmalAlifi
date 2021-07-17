@@ -7,6 +7,7 @@
             <div class="card">
                 <div class="card-header">Data Makul
                     <a href="{{ route('tambah.makul') }}" class="btn btn-md btn-primary float-right">Tambah Data</a>
+                    <link rel="stylesheet" href="css/stle.css">
                 </div>
 
                 <div class="card-body">

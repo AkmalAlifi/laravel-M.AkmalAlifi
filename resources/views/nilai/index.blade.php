@@ -3,10 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">      
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Data Mahasiswa
-                    <a href="{{ route('tambah.mahasiswa') }}" class="btn btn-md btn-primary float-right">Tambah Data</a>
+                <div class="card-header">Data Nilai
+                    <a href="{{ route('tambah.nilai') }}" class="btn btn-md btn-primary float-right">Tambah Data</a>
                     <link rel="stylesheet" href="css/stle.css">
                 </div>
 
@@ -17,30 +17,28 @@
                                 <th>NO.</th>
                                 <th>NPM</th>
                                 <th>NAMA LENGKAP</th>
-                                <th>TEMPAT, TANGAL LAHIR</th>
-                                <th>JENIS KELAMIN</th>
-                                <th>TELEPON</th>
-                                <th>ALAMAT</th>
+                                <th>NAMA MAKUL</th>
+                                <th>SKS</th>
+                                <th>NILAI</th>
                                 <th>AKSI</th>
                             </tr>
-                            
                             @php
                                 $no = 1;
                             @endphp
 
-                             @foreach ($mahasiswa as $mhs)
+                             @foreach ($nilai as $nli)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>{{ $mhs->npm }}</td>
-                            <td>{{ $mhs->user->name }}</td>
-                            <td>{{ $mhs->tempat_lahir.', '.$mhs->tgl_lahir }}</td>
-                            <td>{{ $mhs->gender == 'L' ? 'Laki-Laki' : 'Perempuan' }}</td>
-                            <td>{{ $mhs->telepon }}</td>
-                            <td>{{ $mhs->Alamat }}</td>
+                            <td>{{ $nli->mahasiswa->npm }}</td>
+                            <td>{{ $nli->mahasiswa->user->name }}</td>
+                            <td>{{ $nli->makul->nama_makul }}</td>
+                            <td>{{ $nli->makul->sks }}</td>
+                            <td>{{ $nli->nilai }}</td>
+                        
                            
                             <td>
-                              <a href="{{ route('edit.mahasiswa', $mhs->id) }}" class="btn btn-sm btn-warning">EDIT</a>
-                              <a href="{{ route('hapus.mahasiswa', $mhs->id) }}" class="btn btn-sm btn-danger">HAPUS</a>
+                              <a href="{{ route('edit.nilai', $nli->id) }}" class="btn btn-sm btn-warning">EDIT</a>
+                              <a href="{{ route('hapus.nilai', $nli->id) }}" class="btn btn-sm btn-danger">HAPUS</a>
                             </td>
                             
                         </tr>

@@ -37,6 +37,7 @@ class makulController extends Controller
         $makul = makul::find($id);
         $makul->update($request->all());
         toast('Yeay Berhasil Mengedit Data','success');
+        return redirect()->route('makul');
       
     }
 
